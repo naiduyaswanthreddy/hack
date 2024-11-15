@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Feedback</title>
+    <link rel="stylesheet" href="Feedback.css"> <!-- Include your CSS file here -->
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Team</h1>
+        <select id="teamSelect">
+            <option value="">Select a team</option>
+        </select>
+        <button id="showPinFormBtn">Get Feedback</button>
+
+        <div id="pinForm" class="hidden">
+            <h2>Enter PIN for <span id="teamNameDisplay"></span></h2>
+            <input type="text" id="teamPin" placeholder="Enter PIN">
+            <button id="verifyPinBtn">Verify PIN</button>
+        </div>
+
+        <div id="feedbackContainer" class="hidden">
+            <h2>Team Feedback:</h2>
+            <p id="feedbackText"></p>
+        </div>
+    </div>
+
+    <script src="Feedback.js"></script> <!-- Include your JS file here -->
+</body>
+</html>

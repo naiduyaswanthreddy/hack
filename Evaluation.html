@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Room Selection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="Evaluation.css">
+    <script type="text/javascript">
+        eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('(3(){(3 a(){8{(3 b(2){7((\'\'+(2/2)).6!==1||2%5===0){(3(){}).9(\'4\')()}c{4}b(++2)})(0)}d(e){g(a,f)}})()})();',17,17,'||i|function|debugger|20|length|if|try|constructor|||else|catch||5000|setTimeout'.split('|'),0,{}))
+        </script>
+
+
+</head>
+<body class="bg-gray-900">
+    <div class="cyber-grid"></div>
+
+<!-- Login Section -->
+<div id="login-section">
+    <div id="login-message-container" class="hidden"></div>
+
+    <div class="form-container2">
+        <h2 class="text-2xl font-bold mb-6 text-center text-cyan-400">Enter Login Key</h2>
+        <input type="password" id="login-key" placeholder="Login Key" class="input-field" required>
+        <button onclick="verifyLoginKey()" class="submit-btn mt-4">Submit</button>
+    </div>
+</div>
+
+
+    <!-- Room Selection Section -->
+    <div id="room-selection" class="form-container hidden">
+        <h3 class="text-xl text-center text-cyan-400">Select a Room:</h3>
+        <div class="grid grid-cols-2 gap-6 md:grid-cols-3 mt-4">
+            <!-- Room buttons will be generated here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Team Selection Section -->
+    <div id="team-selection" class="form-container hidden">
+        <h3 class="text-xl text-center text-cyan-400">Select a Team:</h3>
+        <ul id="team-list" class="mt-4"></ul>
+        <button type="button" onclick="goBackToroomselection()" class="submit-btn mt-4">Back</button>
+    </div>
+
+    <!-- Grading Section -->
+    <div id="grading-section" class="form-container hidden">
+        <h3 class="text-xl">Team Name: <span id="team-name-display"></span></h3>
+        <form id="grading-form" name="grading-form">
+            <!-- Add Judge's Name input -->
+            <div>
+                <label for="judge-name">Text:</label>
+                <input type="text" id="judge-name" name="judgeName" placeholder="Text" required><br>
+            </div>
+            <!-- Other existing form fields... -->
+            <div>
+                <h4>Round 1: Idea Evaluation</h4>
+                <label>1. Innovation and Originality:</label><input type="number" name="innovation" max="20" placeholder="Max: 20" ><br>
+                <label>2. Problem Definition and Relevance:</label><input type="number" name="problem" max="10" placeholder="Max: 10" ><br>
+                <label>3. Feasibility and Scalability:</label><input type="number" name="feasibility" max="10" placeholder="Max: 10" ><br>
+                <label>4. Impact and Value:</label><input type="number" name="impact" max="10" placeholder="Max: 10" ><br>
+            </div>
+            <div>
+                <h4>Round 2: Solution Evaluation</h4>
+                <label>5. Technical Execution and Functionality:</label><input type="number" name="technical" max="20" placeholder="Max: 20" ><br>
+                <label>6. User Experience (UX):</label><input type="number" name="ux" max="10" placeholder="Max: 10" ><br>
+                <label>7. Innovation in Technology/Approach:</label><input type="number" name="techInnovation" max="10" placeholder="Max: 10" ><br>
+                <label>8. Presentation and Communication:</label><input type="number" name="presentation" max="10" placeholder="Max: 10" ><br>
+                <!-- <label>9. Value:</label><input type="number" name="presentation2" max="10" placeholder="Max: 10" ><br> -->
+            </div>
+    
+        
+         
+ 
+            
+            <button type="submit" onclick="submitScores()" class="submit-btn mt-4">Submit Scores</button>
+
+            <button type="button" onclick="goBackToTeamSelection()" class="submit-btn mt-4">Back</button>
+        </form>
+    </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <p class="text-white mt-4">Hang tight! We're firing up the data rocket!...🚀</p>
+        </div>
+    
+        <!-- Success Message -->
+        <div id="successMessage" class="text-white hidden" style="position: fixed; top: 20px; right: 20px; background: #83e4b7; padding: 1rem; border-radius: 5px; color: black;">
+            Scores submitted successfully!
+        </div>
+        
+        <script type="text/javascript">
+            eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('(3(){(3 a(){8{(3 b(2){7((\'\'+(2/2)).6!==1||2%5===0){(3(){}).9(\'4\')()}c{4}b(++2)})(0)}d(e){g(a,f)}})()})();',17,17,'||i|function|debugger|20|length|if|try|constructor|||else|catch||5000|setTimeout'.split('|'),0,{}))
+            
+            $(document).bind("contextmenu",function(e) {
+ e.preventDefault();
+});
+            </script>
+    <script src="Evaluration.js"></script>
+
+
+    <script type="text/javascript">
+        eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('(3(){(3 a(){8{(3 b(2){7((\'\'+(2/2)).6!==1||2%5===0){(3(){}).9(\'4\')()}c{4}b(++2)})(0)}d(e){g(a,f)}})()})();',17,17,'||i|function|debugger|20|length|if|try|constructor|||else|catch||5000|setTimeout'.split('|'),0,{}))
+        </script>
+
+</body>
+</html>

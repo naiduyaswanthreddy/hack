@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/script.js"
+  to = "/"
+  status = 302
